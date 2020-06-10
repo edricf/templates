@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Model</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Stock Price Analysis</h2>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>Enter Ticker of Stock below</h2>
+					<p>This will return estimated VaR/CVaR of stock, estimated Alpha/Beta <br>
+					Forecasted Stock Price using ARIMA and using kelly criterion to create a trading strategy</p>
+
+ <div class="login">
+
+					<form action="{{ url_for('predict')}}" method="POST">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-8 col-12-mobilep">
+								<input type="text" name="Ticker" id="text" placeholder="Ticker" />
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<input type="submit" value="Enter" class="predict" />
+							</div>
+						</div>
+					</form>
+					<br>
+					<br>
+
+					{{ prices }}
+					{{  VaR  }}
+
+
+ </div>
+
+				</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
